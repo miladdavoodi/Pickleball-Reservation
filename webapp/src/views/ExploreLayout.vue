@@ -1,5 +1,46 @@
 <script setup>
-import { HeaderComponet } from "@/components";
+import { ref } from "vue";
+import { HeaderComponet, GroupComponet } from "@/components";
+
+import person1 from "@/assets/images/Ellipse-1.png";
+import person2 from "@/assets/images/Ellipse-2.png";
+import person3 from "@/assets/images/Ellipse-3.png";
+import person4 from "@/assets/images/Ellipse-4.png";
+
+const groupList = ref([
+  {
+    id: 10001,
+    title: "group 1",
+    team: [
+      { name: "Milad", avatar: person1 },
+      { name: "ali", avatar: person2 },
+      { name: "reza", avatar: person3 },
+    ],
+    limit: 4,
+  },
+  {
+    id: 10002,
+    title: "group 2",
+    team: [
+      { name: "Milad", avatar: person4 },
+      { name: "ali", avatar: person1 },
+      { name: "reza", avatar: person2 },
+      { name: "javad", avatar: person3 },
+    ],
+    limit: 4,
+  },
+  {
+    id: 10003,
+    title: "group 3",
+    team: [
+      { name: "Milad", avatar: person2 },
+      { name: "ali", avatar: person4 },
+      { name: "reza", avatar: person3 },
+      { name: "ahad", avatar: person1 },
+    ],
+    limit: 4,
+  },
+]);
 </script>
 
 <template>
@@ -14,108 +55,11 @@ import { HeaderComponet } from "@/components";
             <div class="uppercase font-light mb-4 text-gray-400 text-2xl">
               explore
             </div>
-            <div
-              class="bg-white border border-gray-200 rounded-md flex cursor-pointer hover:shadow-sm items-center justify-between gap-2 px-4 py-2"
-            >
-              <div class="flex gap-2 items-center">
-                <div class="w-2 h-2 bg-red-500 rounded-full"></div>
-                <div class="flex gap-1">
-                  <div
-                    class="w-8 h-8 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                </div>
-                <div class="uppercase font-semibold text-sm">Group 1</div>
-              </div>
-
-              <div class="flex items-center">
-                <div class="text-sm text-gray-400">2/</div>
-                <div class="text-xl font-semibold">4</div>
-              </div>
-            </div>
-            <div
-              class="bg-white border border-gray-200 rounded-md flex cursor-pointer hover:shadow-sm items-center justify-between gap-2 px-4 py-2"
-            >
-              <div class="flex gap-2 items-center">
-                <div
-                  class="w-8 h-8 border-2 relative border-white rounded-full bg-slate-200"
-                >
-                  <div
-                    class="w-full h-full bg-slate-300 rounded-full animate-ping delay-1000"
-                  ></div>
-                  <img class="absolute top-0" src="@/assets/images/add.svg" />
-                </div>
-                <div class="flex gap-1">
-                  <div
-                    class="w-8 h-8 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                </div>
-                <div class="uppercase font-semibold text-sm">Group 2</div>
-              </div>
-
-              <div class="flex items-center">
-                <div class="text-sm text-gray-400">2/</div>
-                <div class="text-xl font-semibold">4</div>
-              </div>
-            </div>
-            <div
-              class="bg-white rounded-md border border-gray-200 flex cursor-pointer hover:shadow-sm items-center justify-between gap-2 px-4 py-2"
-            >
-              <div class="flex gap-2 items-center">
-                <div class="w-2 h-2 bg-green-500 rounded-full"></div>
-                <div class="flex gap-1">
-                  <div
-                    class="w-8 h-8 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                  <div
-                    class="w-8 h-8 -ml-4 border-2 border-white rounded-full bg-slate-200"
-                  >
-                    <img src="@/assets/images/person.png" />
-                  </div>
-                </div>
-                <div class="uppercase font-semibold text-sm">Group 3</div>
-              </div>
-
-              <div class="flex items-center">
-                <div class="text-sm text-gray-400">2/</div>
-                <div class="text-xl font-semibold">4</div>
-              </div>
-            </div>
+            <group-componet
+              v-for="(group, key) in groupList"
+              v-bind="group"
+              :key="key"
+            />
           </div>
         </div>
       </div>

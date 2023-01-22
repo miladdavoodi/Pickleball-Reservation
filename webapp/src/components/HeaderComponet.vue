@@ -6,7 +6,7 @@
     </div>
     <div class="flex gap-2">
       <div>
-        <img class="w-8" src="@/assets/images/person.png" />
+        <img class="w-8" src="@/assets/images/Ellipse-1.png" />
       </div>
       <div class="flex flex-col uppercase gap-1 text-xs">
         <div class="text-gray-400">WELCOME</div>
