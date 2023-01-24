@@ -1,0 +1,183 @@
+{
+    "openapi": "3.0.0",
+    "info": {
+        "title": "pickleball-backend",
+        "version": "1.0.0"
+    },
+    "paths": {
+        "/api/auth/me": {
+            "get": {
+                "tags": [
+                    "Auth"
+                ],
+                "summary": "show user with token",
+                "operationId": "b9abb1a7a74670a19c215c2c133f14d8",
+                "parameters": [
+                    {
+                        "name": "X-localization",
+                        "in": "header",
+                        "description": "localization",
+                        "required": true,
+                        "example": "en"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/group/showall": {
+            "get": {
+                "tags": [
+                    "Groups"
+                ],
+                "summary": "show all groups ",
+                "operationId": "ee048b0c461bfff278a92ac5b8f06c98",
+                "parameters": [
+                    {
+                        "name": "X-localization",
+                        "in": "header",
+                        "description": "localization",
+                        "required": true,
+                        "example": "en"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/group/assign": {
+            "post": {
+                "tags": [
+                    "Groups"
+                ],
+                "summary": "add user to group",
+                "operationId": "e3bca5fcf56c498134738fd6ec8b5232",
+                "parameters": [
+                    {
+                        "name": "X-localization",
+                        "in": "header",
+                        "description": "localization",
+                        "required": true,
+                        "example": "fa"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "example": "1"
+                                    },
+                                    "group_id": {
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/group/unassign": {
+            "post": {
+                "tags": [
+                    "Groups"
+                ],
+                "summary": "add user to group",
+                "operationId": "940f10f847321e3726565de571049888",
+                "parameters": [
+                    {
+                        "name": "X-localization",
+                        "in": "header",
+                        "description": "localization",
+                        "required": true,
+                        "example": "fa"
+                    }
+                ],
+                "requestBody": {
+                    "content": {
+                        "application/json": {
+                            "schema": {
+                                "properties": {
+                                    "user_id": {
+                                        "example": "1"
+                                    },
+                                    "group_id": {
+                                        "example": "1"
+                                    }
+                                },
+                                "type": "object"
+                            }
+                        }
+                    }
+                },
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        },
+        "/api/user/showall": {
+            "get": {
+                "tags": [
+                    "Users"
+                ],
+                "summary": "show all users ",
+                "operationId": "5c9c20ed18d077cca39b0b1f90c6b3b8",
+                "parameters": [
+                    {
+                        "name": "X-localization",
+                        "in": "header",
+                        "description": "localization",
+                        "required": true,
+                        "example": "en"
+                    }
+                ],
+                "responses": {
+                    "200": {
+                        "description": "ok",
+                        "content": {
+                            "application/json": {
+                                "schema": {}
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
